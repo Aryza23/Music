@@ -12,17 +12,17 @@
         "OWNER_ID": {
             "description": "fill with your telegram id as the owner of the bot",
             "required": true,
-            "value": ""
+            "value": "1192108540"
         },
         "ASS_ID": {
             "description": "fill with telegram id of account",
             "required": true,
-            "value": ""
+            "value": "2047725868"
         },
         "LOG_GROUP_ID": {
             "description": "create a private group and get the group id, add your bot as admin to the group too",
             "required": true,
-            "value": "-"
+            "value": "-1001545036829"
         },
         "API_ID": {
             "description": "your Api ID from my.telegram.org/apps",
