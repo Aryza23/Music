@@ -5,12 +5,12 @@ from Music.MusicUtilities.helpers.filters import command
 import subprocess
 import shutil
 import os
-   
-    
+
+
 @Client.on_message(command("clean") & filters.user(SUDOERS))
-async def hsjdjs(_, message: Message):    
-    dir = 'downloads'
-    dir1 = 'search'
+async def hsjdjs(_, message: Message):
+    dir = "downloads"
+    dir1 = "search"
     shutil.rmtree(dir)
     shutil.rmtree(dir1)
     os.mkdir(dir)

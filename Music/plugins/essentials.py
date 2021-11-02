@@ -7,22 +7,42 @@ import traceback
 from inspect import getfullargspec
 from io import StringIO
 from time import time
-from Music.MusicUtilities.database.queue import (is_active_chat, add_active_chat, remove_active_chat, music_on, is_music_playing, music_off)
-from Music.MusicUtilities.database.onoff import (is_on_off, add_on, add_off)
-from Music.MusicUtilities.database.blacklistchat import (blacklisted_chats, blacklist_chat, whitelist_chat)
-from Music.MusicUtilities.database.gbanned import (get_gbans_count, is_gbanned_user, add_gban_user, add_gban_user)
-from Music.MusicUtilities.database.theme import (_get_theme, get_theme, save_theme)
-from Music.MusicUtilities.database.assistant import (_get_assistant, get_assistant, save_assistant)
+from Music.MusicUtilities.database.queue import (
+    is_active_chat,
+    add_active_chat,
+    remove_active_chat,
+    music_on,
+    is_music_playing,
+    music_off,
+)
+from Music.MusicUtilities.database.onoff import is_on_off, add_on, add_off
+from Music.MusicUtilities.database.blacklistchat import (
+    blacklisted_chats,
+    blacklist_chat,
+    whitelist_chat,
+)
+from Music.MusicUtilities.database.gbanned import (
+    get_gbans_count,
+    is_gbanned_user,
+    add_gban_user,
+    add_gban_user,
+)
+from Music.MusicUtilities.database.theme import _get_theme, get_theme, save_theme
+from Music.MusicUtilities.database.assistant import (
+    _get_assistant,
+    get_assistant,
+    save_assistant,
+)
 from Music.config import DURATION_LIMIT
-from Music.MusicUtilities.tgcallsrun import (music, clear, get, is_empty, put, task_done)
+from Music.MusicUtilities.tgcallsrun import music, clear, get, is_empty, put, task_done
 from Music.MusicUtilities.helpers.decorators import errors
 from Music.MusicUtilities.helpers.filters import command
-from Music.MusicUtilities.helpers.gets import (get_url, themes, random_assistant)
+from Music.MusicUtilities.helpers.gets import get_url, themes, random_assistant
 from Music.MusicUtilities.helpers.logger import LOG_CHAT
 from Music.MusicUtilities.helpers.thumbnails import gen_thumb
 from Music.MusicUtilities.helpers.chattitle import CHAT_TITLE
 from Music.MusicUtilities.helpers.ytdl import ytdl
-from Music.MusicUtilities.helpers.inline import (play_keyboard, search_markup)
+from Music.MusicUtilities.helpers.inline import play_keyboard, search_markup
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from sys import version as pyver
@@ -32,6 +52,7 @@ from Music import app, SUDOERS, OWNER
 from Music.MusicUtilities.helpers.filters import command
 from Music.MusicUtilities.helpers.decorators import errors
 from Music.MusicUtilities.database.functions import start_restart_stage
+
 
 @Client.on_message(command("update") & filters.user(OWNER))
 @errors
@@ -43,7 +64,8 @@ async def update(_, message: Message):
         os.execvp("python3", ["python3", "-m", "Music"])
     else:
         await message.reply_text("Already Upto Date")
-        
+
+
 async def aexec(code, client, message):
     exec(
         "async def __aexec(client, message): "
@@ -66,7 +88,9 @@ async def edit_or_reply(msg: Message, **kwargs):
 )
 async def executor(client, message):
     if len(message.command) < 2:
-        return await edit_or_reply(message, text="__Nigga Give me some command to execute.__")
+        return await edit_or_reply(
+            message, text="__Nigga Give me some command to execute.__"
+        )
     try:
         cmd = message.text.split(" ", maxsplit=1)[1]
     except IndexError:
@@ -101,13 +125,7 @@ async def executor(client, message):
             out_file.write(str(evaluation.strip()))
         t2 = time()
         keyboard = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        text="⏳", callback_data=f"runtime {t2-t1} Seconds"
-                    )
-                ]
-            ]
+            [[InlineKeyboardButton(text="⏳", callback_data=f"runtime {t2-t1} Seconds")]]
         )
         await message.reply_document(
             document=filename,
@@ -139,10 +157,7 @@ async def runtime_func_cq(_, cq):
 
 
 @app.on_message(
-    filters.user(OWNER)
-    & ~filters.forwarded
-    & ~filters.via_bot
-    & filters.command("sh"),
+    filters.user(OWNER) & ~filters.forwarded & ~filters.via_bot & filters.command("sh"),
 )
 async def shellrunner(client, message):
     if len(message.command) < 2:
