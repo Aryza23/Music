@@ -8,16 +8,26 @@ import uvloop
 from Music import config
 import importlib
 from pyrogram import Client as Bot
-from Music.config import API_ID, API_HASH, BOT_TOKEN, MONGO_DB_URI, SUDO_USERS, LOG_GROUP_ID, OWNER_ID
+from Music.config import (
+    API_ID,
+    API_HASH,
+    BOT_TOKEN,
+    MONGO_DB_URI,
+    SUDO_USERS,
+    LOG_GROUP_ID,
+    OWNER_ID,
+)
 from pyrogram import Client
 from aiohttp import ClientSession
 from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
 import time
 
+
 def initialize():
     global dbb
     dbb = {}
-    
+
+
 initialize()
 
 print("[INFO]: INITIALIZING DATABASE")
@@ -25,6 +35,8 @@ MONGODB_CLI = MongoClient(MONGO_DB_URI)
 db = MONGODB_CLI.wbb
 SUDOERS = SUDO_USERS
 OWNER = OWNER_ID
+
+
 async def load_sudoers():
     global SUDOERS
     print("[INFO]: LOADING SUDO USERS")
@@ -39,12 +51,12 @@ async def load_sudoers():
             )
     SUDOERS = (SUDOERS + sudoers) if sudoers else SUDOERS
     print("[INFO]: LOADED SUDO USERS")
+
+
 loop = asyncio.get_event_loop()
 loop.run_until_complete(load_sudoers())
 Music_START_TIME = time.time()
 loop = asyncio.get_event_loop()
-
-
 
 
 BOT_ID = 0
@@ -56,7 +68,7 @@ ASSUSERNAME = ""
 ASSMENTION = ""
 print("[INFO]: INITIALIZING BOT CLIENT")
 app = Client(
-    'MusicBot',
+    "MusicBot",
     API_ID,
     API_HASH,
     bot_token=BOT_TOKEN,
@@ -64,6 +76,7 @@ app = Client(
 aiohttpsession = ClientSession()
 
 client = Client(config.SESSION_NAME, config.API_ID, config.API_HASH)
+
 
 def all_info(app, client):
     global BOT_ID, BOT_NAME, BOT_USERNAME
@@ -84,9 +97,8 @@ def all_info(app, client):
     )
     ASSUSERNAME = getme1.username
     ASSMENTION = getme1.mention
-    
 
-    
+
 print("[INFO]: STARTING BOT CLIENT")
 app.start()
 print("[INFO]: STARTING ASSISTANT CLIENT")
