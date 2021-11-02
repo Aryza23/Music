@@ -3,6 +3,7 @@ from Music import db
 
 sudoersdb = db.sudoers
 
+
 async def get_sudoers() -> list:
     sudoers = await sudoersdb.find_one({"sudo": "sudo"})
     if not sudoers:
