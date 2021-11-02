@@ -23,6 +23,7 @@ async def unauthorised(message: Message):
         await app.leave_chat(chatID)
     return 1
 
+
 async def adminsOnly(permission, message):
     chatID = message.chat.id
     if not message.from_user:
@@ -33,4 +34,4 @@ async def adminsOnly(permission, message):
     permissions = await member_permissions(chatID, userID)
     if userID not in SUDOERS and permission not in permissions:
         return await unauthorised(message)
-    return await authorised( message)
+    return await authorised(message)

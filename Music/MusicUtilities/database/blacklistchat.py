@@ -3,6 +3,7 @@ from Music import db
 
 blacklist_chatdb = db.blacklistChat
 
+
 async def blacklisted_chats() -> list:
     chats = blacklist_chatdb.find({"chat_id": {"$lt": 0}})
     return [chat["chat_id"] for chat in await chats.to_list(length=1000000000)]
