@@ -3,7 +3,7 @@ from functools import wraps
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 from pyrogram.types import Message
 from Music import app, SUDOERS
-from Music.Plugins.admins import member_permissions
+from Music.plugins.admins import member_permissions
 
 
 async def authorised(message):
