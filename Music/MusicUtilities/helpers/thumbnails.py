@@ -6,6 +6,7 @@ from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
 
+
 def changeImageSize(maxWidth, maxHeight, image):
     widthRatio = maxWidth / image.size[0]
     heightRatio = maxHeight / image.size[1]
@@ -32,15 +33,28 @@ async def gen_thumb(thumbnail, title, userid, theme, ctitle):
     img = Image.open(f"search/temp{userid}.png")
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("cache/finalfont.ttf", 60)
-    font2 = ImageFont.truetype("cache/finalfont.ttf", 70)     
-    draw.text((20, 45), f"{title[:30]}...", fill= "white", stroke_width = 1, stroke_fill="white", font=font2)
-    draw.text((120, 595), f"Playing on: {ctitle[:20]}...", fill="white", stroke_width = 1, stroke_fill="white" ,font=font)
+    font2 = ImageFont.truetype("cache/finalfont.ttf", 70)
+    draw.text(
+        (20, 45),
+        f"{title[:30]}...",
+        fill="white",
+        stroke_width=1,
+        stroke_fill="white",
+        font=font2,
+    )
+    draw.text(
+        (120, 595),
+        f"Playing on: {ctitle[:20]}...",
+        fill="white",
+        stroke_width=1,
+        stroke_fill="white",
+        font=font,
+    )
     img.save(f"search/final{userid}.png")
     os.remove(f"search/temp{userid}.png")
-    os.remove(f"search/thumb{userid}.png") 
+    os.remove(f"search/thumb{userid}.png")
     final = f"search/final{userid}.png"
     return final
-
 
 
 async def down_thumb(thumbnail, userid):

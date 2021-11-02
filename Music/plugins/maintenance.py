@@ -1,7 +1,7 @@
 from Music import app, SUDOERS
 from pyrogram import filters, Client
 from pyrogram.types import Message
-from Music.MusicUtilities.database.onoff import (is_on_off, add_on, add_off)
+from Music.MusicUtilities.database.onoff import is_on_off, add_on, add_off
 from Music.MusicUtilities.helpers.filters import command
 
 
@@ -24,7 +24,7 @@ async def smex(_, message):
     else:
         await message.reply_text(usage)
 
-        
+
 @Client.on_message(command("stp") & filters.user(SUDOERS))
 async def sls_skfs(_, message):
     usage = "**Usage:**\n/st [enable|disable]"

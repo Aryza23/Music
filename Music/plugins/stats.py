@@ -2,19 +2,20 @@ from Music import app, SUDOERS, BOT_ID
 from pyrogram import filters, Client
 from sys import version as pyver
 from pyrogram import __version__ as pyrover
-from pytgcalls import (__version__ as pytover)
+from pytgcalls import __version__ as pytover
 from pyrogram.types import Message
 import platform, socket, re, uuid, json, psutil, logging
 from Music.MusicUtilities.database.gbanned import get_gbans_count
 from Music.MusicUtilities.database.chats import get_served_chats
-from Music.MusicUtilities.database.sudo import (get_sudoers, get_sudoers, remove_sudo)
+from Music.MusicUtilities.database.sudo import get_sudoers, get_sudoers, remove_sudo
 from Music.MusicUtilities.database.playlist import get_playlist_count
 from Music.MusicUtilities.helpers.time import get_readable_time
 from Music import app, SUDOERS, Music_START_TIME
-import os 
+import os
 import time
 from pymongo import MongoClient
 from Music.config import MONGO_DB_URI as smex
+
 
 @app.on_message(filters.command("stats") & ~filters.edited)
 async def gstats(_, message):
@@ -27,23 +28,23 @@ async def gstats(_, message):
     sudoers = await get_sudoers()
     j = 0
     for count, user_id in enumerate(sudoers, 0):
-        try:                     
+        try:
             user = await app.get_users(user_id)
             j += 1
         except Exception:
-            continue                     
-    modules_count ="17"
+            continue
+    modules_count = "17"
     sc = platform.system()
     arch = platform.machine()
-    ram = str(round(psutil.virtual_memory().total / (1024.0 **3)))+" GB"
+    ram = str(round(psutil.virtual_memory().total / (1024.0 ** 3))) + " GB"
     bot_uptime = int(time.time() - Music_START_TIME)
     uptime = f"{get_readable_time((bot_uptime))}"
-    hdd = psutil.disk_usage('/')
-    total = (hdd.total / (1024.0 ** 3))
+    hdd = psutil.disk_usage("/")
+    total = hdd.total / (1024.0 ** 3)
     total = str(total)
-    used = (hdd.used / (1024.0 ** 3))
+    used = hdd.used / (1024.0 ** 3)
     used = str(used)
-    free = (hdd.free / (1024.0 ** 3))
+    free = hdd.free / (1024.0 ** 3)
     free = str(free)
     msg = f"""
 **Global Stats of Private Music Bot**:\n\n
