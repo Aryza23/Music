@@ -39,7 +39,7 @@ async def gen_thumb(thumbnail, title, userid, theme, ctitle):
         f"{title[:30]}...",
         fill="white",
         stroke_width=1,
-        stroke_fill="white",
+        stroke_fill="black",
         font=font2,
     )
     draw.text(
@@ -47,7 +47,7 @@ async def gen_thumb(thumbnail, title, userid, theme, ctitle):
         f"Playing on: {ctitle[:20]}...",
         fill="white",
         stroke_width=1,
-        stroke_fill="white",
+        stroke_fill="black",
         font=font,
     )
     img.save(f"search/final{userid}.png")
