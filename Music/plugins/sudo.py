@@ -34,7 +34,7 @@ async def useradd(_, message: Message):
         added = await add_sudo(user.id)
         if added:
             await message.reply_text(
-                f"Added **{user.mention}** as a Super User for Music OwO"
+                f"Added **{user.mention}** as a Super User for Aries Music "
             )
             return os.execvp("python3", ["python3", "-m", "Music"])
         await edit_or_reply(message, text="Something wrong happened, check logs.")
@@ -47,7 +47,7 @@ async def useradd(_, message: Message):
         return await message.reply_text("Already a Sudo User.")
     added = await add_sudo(user_id)
     if added:
-        await message.reply_text(f"Added **{mention}** as a Super User for Music OwO")
+        await message.reply_text(f"Added **{mention}** as a Super User for Aries Music ")
         return os.execvp("python3", ["python3", "-m", "Music"])
     await edit_or_reply(message, text="Something wrong happened, check logs.")
     return
@@ -67,10 +67,10 @@ async def userdel(_, message: Message):
         user = await app.get_users(user)
         from_user = message.from_user
         if user.id not in await get_sudoers():
-            return await message.reply_text(f"Not a part of Music's Sudo.")
+            return await message.reply_text(f"Not a part of Aries Music's Sudo.")
         removed = await remove_sudo(user.id)
         if removed:
-            await message.reply_text(f"Removed **{user.mention}** from Music's Sudo.")
+            await message.reply_text(f"Removed **{user.mention}** from Aries Music's Sudo.")
             return os.execvp("python3", ["python3", "-m", "Music"])
         await message.reply_text(f"Something wrong happened.")
         return
@@ -78,10 +78,10 @@ async def userdel(_, message: Message):
     user_id = message.reply_to_message.from_user.id
     mention = message.reply_to_message.from_user.mention
     if user_id not in await get_sudoers():
-        return await message.reply_text(f"Not a part of Music's Sudo.")
+        return await message.reply_text(f"Not a part of Aries Music's Sudo.")
     removed = await remove_sudo(user_id)
     if removed:
-        await message.reply_text(f"Removed **{mention}** from Music's Sudo.")
+        await message.reply_text(f"Removed **{mention}** from Aries Music's Sudo.")
         return os.execvp("python3", ["python3", "-m", "Music"])
     await message.reply_text(f"Something wrong happened.")
 
@@ -89,7 +89,7 @@ async def userdel(_, message: Message):
 @app.on_message(filters.command("sudolist"))
 async def sudoers_list(_, message: Message):
     sudoers = await get_sudoers()
-    text = "**__Sudo Users List of Music:-__**\n\n"
+    text = "**__Sudo Users List of Aries Music:-__**\n\n"
     for count, user_id in enumerate(sudoers, 1):
         try:
             user = await app.get_users(user_id)
