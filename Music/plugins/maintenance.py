@@ -5,7 +5,7 @@ from Music.MusicUtilities.database.onoff import is_on_off, add_on, add_off
 from Music.MusicUtilities.helpers.filters import command
 
 
-@Client.on_message(command("Musicp") & filters.user(SUDOERS))
+@Client.on_message(command("mpl") & filters.user(SUDOERS))
 async def smex(_, message):
     usage = "**Usage:**\n/Musicp [enable|disable]"
     if len(message.command) != 2:
@@ -25,7 +25,7 @@ async def smex(_, message):
         await message.reply_text(usage)
 
 
-@Client.on_message(command("stp") & filters.user(SUDOERS))
+@Client.on_message(command("st") & filters.user(SUDOERS))
 async def sls_skfs(_, message):
     usage = "**Usage:**\n/st [enable|disable]"
     if len(message.command) != 2:
