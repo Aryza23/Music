@@ -179,7 +179,7 @@ def personal_markup(link):
 
 start_keyboard = InlineKeyboardMarkup(
     [
-        [InlineKeyboardButton("📜 Commands", url="https://telegra.ph/Music-Bot-10-10")],
+        [InlineKeyboardButton("📜 Commands", url="https://telegra.ph/-11-03-918")],
         [InlineKeyboardButton("🗑 Close Menu", callback_data="close2")],
     ]
 )
