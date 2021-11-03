@@ -118,7 +118,7 @@ def time_to_seconds(time):
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(":"))))
 
 
-@Client.on_message(command(["play", "play@Tg_Vc_00_Bot"]))
+@Client.on_message(command(["play", "play@idzeroid_bot"]))
 async def play(_, message: Message):
     chat_id = message.chat.id
     if not await is_served_chat(chat_id):
@@ -135,7 +135,7 @@ async def play(_, message: Message):
     username = message.from_user.first_name
     checking = f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
     if await is_on_off(1):
-        LOG_ID = "-1001429892362"
+        LOG_ID = "-1001525866631"
         if int(chat_id) != int(LOG_ID):
             return await message.reply_text(
                 f"Bot is under Maintenance. Sorry for the inconvenience!"
@@ -245,7 +245,7 @@ async def play(_, message: Message):
             else file_name,
         )
         title = "Selected Audio from Telegram"
-        link = "https://t.me/Technical_Hunter"
+        link = "https://t.me/idzeroidsupport"
         thumb = "cache/Audio.png"
         videoid = "smex1"
     elif url:
