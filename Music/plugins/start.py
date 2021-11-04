@@ -31,6 +31,7 @@ from Music.MusicUtilities.database.queue import (
 from Music.MusicUtilities.database.sudo import get_sudoers, get_sudoers, remove_sudo
 
 
+
 @Client.on_message(filters.private & filters.incoming & filters.command("start"))
 async def play(_, message: Message):
     if len(message.command) == 1:
@@ -41,7 +42,6 @@ async def play(_, message: Message):
             message.chat.id,
             text=f"Hello {rpk}!\n\nThis is Music Private Music Bot.\nI play music on Telegram's Voice Chats.\n\nOnly for selected chats.",
             parse_mode="markdown",
-            reply_markup=start_markup,
             reply_to_message_id=message.message_id,
         )
     elif len(message.command) == 2:
