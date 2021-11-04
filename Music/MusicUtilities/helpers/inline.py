@@ -17,10 +17,10 @@ def play_markup(videoid, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="🔎 Search Lyrics", callback_data=f"lyrics {videoid}|{user_id}"
+                text="💬 Support", url=f"https://t.me/idzeroidsupport"
             ),
             InlineKeyboardButton(
-                text="🔗 Other Menu", callback_data=f"other {videoid}|{user_id}"
+                text="🎛 Menu", callback_data=f"other {videoid}|{user_id}"
             ),
         ],
         [InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close2")],
@@ -118,9 +118,9 @@ def search_markup(
             ),
         ],
         [
-            InlineKeyboardButton(text="<", callback_data=f"popat 1|{query}|{user_id}"),
+            InlineKeyboardButton(text="⇜", callback_data=f"popat 1|{query}|{user_id}"),
             InlineKeyboardButton(text="🗑 Close", callback_data=f"ppcl2 smex|{user_id}"),
-            InlineKeyboardButton(text=">", callback_data=f"popat 1|{query}|{user_id}"),
+            InlineKeyboardButton(text="⇝", callback_data=f"popat 1|{query}|{user_id}"),
         ],
     ]
     return buttons
@@ -161,9 +161,9 @@ def search_markup2(
             ),
         ],
         [
-            InlineKeyboardButton(text="<", callback_data=f"popat 2|{query}|{user_id}"),
+            InlineKeyboardButton(text="⇜", callback_data=f"popat 2|{query}|{user_id}"),
             InlineKeyboardButton(text="🗑 Close", callback_data=f"ppcl2 smex|{user_id}"),
-            InlineKeyboardButton(text=">", callback_data=f"popat 2|{query}|{user_id}"),
+            InlineKeyboardButton(text="⇝", callback_data=f"popat 2|{query}|{user_id}"),
         ],
     ]
     return buttons
