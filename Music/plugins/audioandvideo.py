@@ -203,7 +203,7 @@ async def getspy(_, CallbackQuery):
                     )
         else:
             return await CallbackQuery.message.reply_text("Video Format Not Found.")
-    universal = InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close2")
+    universal = InlineKeyboardButton(text="🗑 Close", callback_data=f"close2")
     if j == 0:
         return await CallbackQuery.message.reply_text("Video Format Not Found..")
     elif j == 1:
@@ -216,7 +216,7 @@ async def getspy(_, CallbackQuery):
                     InlineKeyboardButton(
                         text="⬅️  Go Back", callback_data=f"good {videoid}|{user_id}"
                     ),
-                    InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close2"),
+                    InlineKeyboardButton(text="🗑 Close", callback_data=f"close2"),
                 ],
             ]
         )
@@ -231,7 +231,7 @@ async def getspy(_, CallbackQuery):
                     InlineKeyboardButton(
                         text="⬅️  Go Back", callback_data=f"good {videoid}|{user_id}"
                     ),
-                    InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close2"),
+                    InlineKeyboardButton(text="🗑 Close", callback_data=f"close2"),
                 ],
             ]
         )
@@ -249,7 +249,7 @@ async def getspy(_, CallbackQuery):
                     InlineKeyboardButton(
                         text="⬅️  Go Back", callback_data=f"good {videoid}|{user_id}"
                     ),
-                    InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close2"),
+                    InlineKeyboardButton(text="🗑 Close", callback_data=f"close2"),
                 ],
             ]
         )
@@ -268,7 +268,7 @@ async def getspy(_, CallbackQuery):
                     InlineKeyboardButton(
                         text="⬅️  Go Back", callback_data=f"good {videoid}|{user_id}"
                     ),
-                    InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close2"),
+                    InlineKeyboardButton(text="🗑 Close", callback_data=f"close2"),
                 ],
             ]
         )
@@ -290,7 +290,7 @@ async def getspy(_, CallbackQuery):
                     InlineKeyboardButton(
                         text="⬅️  Go Back", callback_data=f"good {videoid}|{user_id}"
                     ),
-                    InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close2"),
+                    InlineKeyboardButton(text="🗑 Close", callback_data=f"close2"),
                 ],
             ]
         )
@@ -313,7 +313,7 @@ async def getspy(_, CallbackQuery):
                     InlineKeyboardButton(
                         text="⬅️  Go Back", callback_data=f"good {videoid}|{user_id}"
                     ),
-                    InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close2"),
+                    InlineKeyboardButton(text="🗑 Close", callback_data=f"close2"),
                 ],
             ]
         )
@@ -353,7 +353,7 @@ async def ytdata(_, CallbackQuery):
                 InlineKeyboardButton(
                     text="⬅️  Go Back", callback_data=f"good {videoid}|{user_id}"
                 ),
-                InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close2"),
+                InlineKeyboardButton(text="🗑 Close", callback_data=f"close2"),
             ],
         ]
     )
@@ -380,7 +380,7 @@ def inl_mark(videoid, user_id):
             InlineKeyboardButton(
                 text="⬅️  Go Back", callback_data=f"good {videoid}|{user_id}"
             ),
-            InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close2"),
+            InlineKeyboardButton(text="🗑 Close", callback_data=f"close2"),
         ],
     ]
     return buttons
