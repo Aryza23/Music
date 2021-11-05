@@ -23,7 +23,7 @@ def play_markup(videoid, user_id):
                 text="🎛 Menu", callback_data=f"other {videoid}|{user_id}"
             ),
         ],
-        [InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close2")],
+        [InlineKeyboardButton(text="🗑 Close", callback_data=f"close2")],
     ]
     return buttons
 
@@ -51,7 +51,7 @@ def others_markup(videoid, user_id):
             InlineKeyboardButton(
                 text="⬅️  Go Back", callback_data=f"goback {videoid}|{user_id}"
             ),
-            InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close2"),
+            InlineKeyboardButton(text="🗑 Close", callback_data=f"close2"),
         ],
     ]
     return buttons
@@ -65,7 +65,7 @@ play_keyboard = InlineKeyboardMarkup(
             InlineKeyboardButton("⏭️", callback_data="skipvc"),
             InlineKeyboardButton("⏹️", callback_data="stopvc"),
         ],
-        [InlineKeyboardButton("Close Menu", callback_data="close")],
+        [InlineKeyboardButton("🗑 Close", callback_data="close")],
     ]
 )
 
@@ -78,7 +78,7 @@ def audio_markup(videoid, user_id):
             InlineKeyboardButton(text="⏭️", callback_data=f"skipvc2"),
             InlineKeyboardButton(text="⏹️", callback_data=f"stopvc2"),
         ],
-        [InlineKeyboardButton(text="🗑 Close Menu", callback_data="close2")],
+        [InlineKeyboardButton(text="🗑 Close", callback_data="close2")],
     ]
     return buttons
 
@@ -180,7 +180,7 @@ def personal_markup(link):
 start_keyboard = InlineKeyboardMarkup(
     [
         [InlineKeyboardButton("📜 Commands", url="https://telegra.ph/-11-03-918")],
-        [InlineKeyboardButton("🗑 Close Menu", callback_data="close2")],
+        [InlineKeyboardButton("🗑 Close", callback_data="close2")],
     ]
 )
 
