@@ -32,7 +32,7 @@ from Music.MusicUtilities.database.sudo import get_sudoers, get_sudoers, remove_
 
 
 
-@Client.on_message(filters.private & filters.incoming & filters.command("start"))
+@Client.on_message(filters.group & filters.incoming & filters.command("start"))
 async def play(_, message: Message):
     if len(message.command) == 1:
         user_id = message.from_user.id
@@ -70,7 +70,7 @@ async def play(_, message: Message):
 📎**Channel Link:** [Visit From Here]({x["channel_url"]})
 🔗**Link:** [Link]({x["webpage_url"]})
 
-⚡️ __Searched Powered By Private Aries Music Bot__"""
+⚡️ __Searched Powered By Aries Music Bot__"""
             link = x["webpage_url"]
             buttons = personal_markup(link)
             userid = message.from_user.id
