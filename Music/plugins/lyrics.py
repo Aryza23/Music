@@ -14,7 +14,7 @@ import lyricsgenius
 import re
 
 
-@Client.on_callback_query(filters.regex(pattern=r"lyrics"))
+@Client.on_callback_query(filters.regex(pattern=r"lirik"))
 async def lyricssex(_, CallbackQuery):
     callback_data = CallbackQuery.data.strip()
     callback_request = callback_data.split(None, 1)[1]
@@ -47,7 +47,7 @@ async def lyricssex(_, CallbackQuery):
     userid = CallbackQuery.from_user.id
     usr = f"[{CallbackQuery.from_user.first_name}](tg://user?id={userid})"
     xxx = f"""
-**Lyrics Search Powered By Music Bot**
+**Lyrics Search Powered By Aries Music Bot**
 
 **Searched By:-** {usr}
 **Searched Song:-** __{title}__
@@ -61,7 +61,7 @@ async def lyricssex(_, CallbackQuery):
     await CallbackQuery.message.reply_text(xxx)
 
 
-@Client.on_message(filters.command("lyrics"))
+@Client.on_message(filters.command("lirik"))
 async def lrsearch(_, message: Message):
     m = await message.reply_text("Searching Lyrics")
     query = message.text.split(None, 1)[1]
@@ -72,7 +72,7 @@ async def lrsearch(_, message: Message):
     if S is None:
         return await m.edit("Lyrics not found :p")
     xxx = f"""
-**Lyrics Search Powered By Music Bot**
+**Lyrics Search Powered By Aries Music Bot**
 
 **Searched Song:-** __{query}__
 
