@@ -23,7 +23,7 @@ def play_markup(videoid, user_id):
 def others_markup(videoid, user_id):
     buttons = [
         [
-        [InlineKeyboardButton("📜 Commands", url="https://telegra.ph/-11-03-918")],
+            [InlineKeyboardButton("📜 Commands", url="https://telegra.ph/-11-03-918")],
         ],
         [
             InlineKeyboardButton(text="▶️", callback_data=f"resumevc2"),
