@@ -10,12 +10,6 @@ from pyrogram.types import (
 def play_markup(videoid, user_id):
     buttons = [
         [
-            InlineKeyboardButton(text="▶️", callback_data=f"resumevc2"),
-            InlineKeyboardButton(text="⏸️", callback_data=f"pausevc2"),
-            InlineKeyboardButton(text="⏭️", callback_data=f"skipvc2"),
-            InlineKeyboardButton(text="⏹️", callback_data=f"stopvc2"),
-        ],
-        [
             InlineKeyboardButton(text="💬 Support", url=f"https://t.me/idzeroidsupport"),
             InlineKeyboardButton(
                 text="🎛 Menu", callback_data=f"other {videoid}|{user_id}"
@@ -28,6 +22,12 @@ def play_markup(videoid, user_id):
 
 def others_markup(videoid, user_id):
     buttons = [
+        [
+            InlineKeyboardButton(text="▶️", callback_data=f"resumevc2"),
+            InlineKeyboardButton(text="⏸️", callback_data=f"pausevc2"),
+            InlineKeyboardButton(text="⏭️", callback_data=f"skipvc2"),
+            InlineKeyboardButton(text="⏹️", callback_data=f"stopvc2"),
+        ],
         [
             InlineKeyboardButton(
                 text="➕ Your Playlist", callback_data=f"playlist {videoid}|{user_id}"
