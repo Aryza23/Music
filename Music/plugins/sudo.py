@@ -47,7 +47,9 @@ async def useradd(_, message: Message):
         return await message.reply_text("Already a Sudo User.")
     added = await add_sudo(user_id)
     if added:
-        await message.reply_text(f"Added **{mention}** as a Super User for Aries Music ")
+        await message.reply_text(
+            f"Added **{mention}** as a Super User for Aries Music "
+        )
         return os.execvp("python3", ["python3", "-m", "Music"])
     await edit_or_reply(message, text="Something wrong happened, check logs.")
     return
@@ -70,7 +72,9 @@ async def userdel(_, message: Message):
             return await message.reply_text(f"Not a part of Aries Music's Sudo.")
         removed = await remove_sudo(user.id)
         if removed:
-            await message.reply_text(f"Removed **{user.mention}** from Aries Music's Sudo.")
+            await message.reply_text(
+                f"Removed **{user.mention}** from Aries Music's Sudo."
+            )
             return os.execvp("python3", ["python3", "-m", "Music"])
         await message.reply_text(f"Something wrong happened.")
         return

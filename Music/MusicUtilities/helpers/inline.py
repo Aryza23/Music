@@ -16,9 +16,7 @@ def play_markup(videoid, user_id):
             InlineKeyboardButton(text="⏹️", callback_data=f"stopvc2"),
         ],
         [
-            InlineKeyboardButton(
-                text="💬 Support", url=f"https://t.me/idzeroidsupport"
-            ),
+            InlineKeyboardButton(text="💬 Support", url=f"https://t.me/idzeroidsupport"),
             InlineKeyboardButton(
                 text="🎛 Menu", callback_data=f"other {videoid}|{user_id}"
             ),

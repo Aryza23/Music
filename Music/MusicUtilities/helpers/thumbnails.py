@@ -15,6 +15,7 @@ def changeImageSize(maxWidth, maxHeight, image):
     newImage = image.resize((newWidth, newHeight))
     return newImage
 
+
 async def gen_thumb(thumbnail, title, userid, theme, ctitle):
     async with aiohttp.ClientSession() as session:
         async with session.get(thumbnail) as resp:
@@ -29,7 +30,7 @@ async def gen_thumb(thumbnail, title, userid, theme, ctitle):
     image5 = image3.convert("RGBA")
     image6 = image4.convert("RGBA")
     Image.alpha_composite(image5, image6).save(f"search/temp{userid}.png")
-    img = Image.open(f"search/temp{userid}.png")   
+    img = Image.open(f"search/temp{userid}.png")
     img.save(f"search/final{userid}.png")
     os.remove(f"search/temp{userid}.png")
     os.remove(f"search/thumb{userid}.png")
