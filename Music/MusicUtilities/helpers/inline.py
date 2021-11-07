@@ -46,9 +46,6 @@ def others_markup(videoid, user_id):
             ),
         ],
         [
-            InlineKeyboardButton("📜 Commands", url="https://telegra.ph/-11-03-918"),
-        ],
-        [
             InlineKeyboardButton(
                 text="↩️ Back", callback_data=f"goback {videoid}|{user_id}"
             ),
