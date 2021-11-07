@@ -31,7 +31,6 @@ from Music.MusicUtilities.database.queue import (
 from Music.MusicUtilities.database.sudo import get_sudoers, get_sudoers, remove_sudo
 
 
-
 @Client.on_message(filters.private & filters.incoming & filters.command("start"))
 async def play(_, message: Message):
     if len(message.command) == 1:
