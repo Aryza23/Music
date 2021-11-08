@@ -57,16 +57,15 @@ async def play(_, message: Message):
             searched_text = f"""
 🔍__**Video Track Information**__
 
-❇️**Title:** {x["title"]}
-   
-⏳**Duration:** {round(x["duration"] / 60)} Mins
-👀**Views:** `{x["view_count"]}`
-👍**Likes:** `{x["like_count"]}`
-👎**Dislikes:** `{x["dislike_count"]}`
-⭐️**Average Ratings:** {x["average_rating"]}
-🎥**Channel Name:** {x["uploader"]}
-📎**Channel Link:** [Visit From Here]({x["channel_url"]})
-🔗**Link:** [Link]({x["webpage_url"]})
+🔘 {x["title"]}   
+├-☉️⇝ ⏳**Duration:** {round(x["duration"] / 60)} Mins
+├-☉️⇝ 👀**Views:** `{x["view_count"]}`
+├-☉️⇝ 👍**Likes:** `{x["like_count"]}`
+├-☉️⇝ 👎**Dislikes:** `{x["dislike_count"]}`
+├-☉️⇝ ⭐️**Average Ratings:** {x["average_rating"]}
+├-☉️⇝ 🎥**Channel Name:** {x["uploader"]}
+├-☉️⇝ 📎**Channel Link:** [Visit From Here]({x["channel_url"]})
+└-☉️⇝ 🔗**Link:** [Link]({x["webpage_url"]})
 
 ⚡️ __Searched Powered By Aries Music Bot__"""
             link = x["webpage_url"]
