@@ -136,7 +136,7 @@ async def mpthree(_, message: Message):
             photo=thumb,
             reply_markup=InlineKeyboardMarkup(buttons),
             caption=(
-                f"🎥 <b>__Title:__ </b>[{title[:25]}]({url})\n💡[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{id})"
+                f" 🏷 <b>__Title:__ </b>[{title[:25]}]({url})\n 💡 [More Information](https://t.me/{BOT_USERNAME}?start=info_{id})"
             ),
         )
         os.remove(thumb)
@@ -245,7 +245,7 @@ async def startyuplay(_, CallbackQuery):
         photo=thumb,
         reply_markup=InlineKeyboardMarkup(buttons),
         caption=(
-            f"🎥 <b>__Title:__ </b>[{title[:25]}]({url})\n 💡 [More Information](https://t.me/{BOT_USERNAME}?start=info_{id})"
+            f" 🏷 <b>__Title:__ </b>[{title[:25]}]({url})\n 💡 [More Information](https://t.me/{BOT_USERNAME}?start=info_{id})"
         ),
     )
     os.remove(thumb)
@@ -439,10 +439,10 @@ def gets(videoid, user_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text="⬇️ Get Audio", callback_data=f"gets audio|{videoid}|{user_id}"
+                text="📥 Audio", callback_data=f"gets audio|{videoid}|{user_id}"
             ),
             InlineKeyboardButton(
-                text="⬇️ Get Video", callback_data=f"gets video|{videoid}|{user_id}"
+                text="📥 Video", callback_data=f"gets video|{videoid}|{user_id}"
             ),
         ],
         [InlineKeyboardButton(text="🗑 Close", callback_data=f"close2")],
