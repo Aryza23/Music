@@ -130,7 +130,7 @@ async def pause_cmd(_, message):
     await message.reply_photo(
         photo=thumb,
         caption=(
-            "**__Music's Playlist Feature__**\n\nSelect The Playlist, You want to check!"
+            "**__Aries Music's Playlist Feature__**\n\nSelect The Playlist, You want to check!"
         ),
         reply_markup=play_list_keyboard,
     )
