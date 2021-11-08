@@ -193,6 +193,7 @@ async def mpthree(_, message: Message):
         disable_web_page_preview = True
         return
 
+
 @Client.on_callback_query(filters.regex(pattern=r"beta"))
 async def startyuplay(_, CallbackQuery):
     callback_data = CallbackQuery.data.strip()
