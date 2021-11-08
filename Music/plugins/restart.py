@@ -47,7 +47,7 @@ async def theme_func(_, message):
         try:
             await app.send_message(
                 x,
-                "Music has just restarted herself. Sorry for the issues.\n\nStart playing after 10-15 seconds again.",
+                "Aries Music has just restarted herself. Sorry for the issues.\n\nStart playing after 10-15 seconds again.",
             )
         except Exception:
             pass
@@ -64,7 +64,7 @@ async def theme_func(_, message):
         except Exception as e:
             await message.reply_text(f"{e}")
             pass
-    x = await message.reply_text(f"__Restarting Music!__")
+    x = await message.reply_text(f"__Restarting Aries Music!__")
     await start_restart_stage(x.chat.id, x.message_id)
     os.execvp(
         f"python{str(pyver.split(' ')[0])[:3]}",
