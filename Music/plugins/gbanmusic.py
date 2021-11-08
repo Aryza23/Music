@@ -54,11 +54,11 @@ async def ban_globally(_, message):
                     pass
             ban_text = f"""
 __**New Global Ban on Music**__
-**Origin:** {message.chat.title} [`{message.chat.id}`]
-**Sudo User:** {from_user.mention}
-**Banned User:** {user.mention}
-**Banned User ID:** `{user.id}`
-**Chats:** {number_of_chats}"""
+├-☉️⇝ **Origin:** {message.chat.title} [`{message.chat.id}`]
+├-☉️⇝ **Sudo User:** {from_user.mention}
+├-☉️⇝ **Banned User:** {user.mention}
+├-☉️⇝ **Banned User ID:** `{user.id}`
+└-☉️⇝ **Chats:** {number_of_chats}"""
             try:
                 await m.delete()
             except Exception:
@@ -104,11 +104,11 @@ __**New Global Ban on Music**__
                     pass
             ban_text = f"""
 __**New Global Ban on Music**__
-**Origin:** {message.chat.title} [`{message.chat.id}`]
-**Sudo User:** {from_user_mention}
-**Banned User:** {mention}
-**Banned User ID:** `{user_id}`
-**Chats:** {number_of_chats}"""
+├-☉️⇝ **Origin:** {message.chat.title} [`{message.chat.id}`]
+├-☉️⇝ **Sudo User:** {from_user_mention}
+├-☉️⇝ **Banned User:** {mention}
+├-☉️⇝ **Banned User ID:** `{user_id}`
+└-☉️⇝ **Chats:** {number_of_chats}"""
             try:
                 await m.delete()
             except Exception:
