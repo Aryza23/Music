@@ -214,9 +214,8 @@ async def getspy(_, CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton(
-                        text="⬅️  Go Back", callback_data=f"good {videoid}|{user_id}"
+                        text="↩️ Back", callback_data=f"good {videoid}|{user_id}"
                     ),
-                    InlineKeyboardButton(text="🗑 Close", callback_data=f"close2"),
                 ],
             ]
         )
@@ -229,9 +228,8 @@ async def getspy(_, CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton(
-                        text="⬅️  Go Back", callback_data=f"good {videoid}|{user_id}"
+                        text="↩️ Back", callback_data=f"good {videoid}|{user_id}"
                     ),
-                    InlineKeyboardButton(text="🗑 Close", callback_data=f"close2"),
                 ],
             ]
         )
@@ -247,9 +245,8 @@ async def getspy(_, CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton(
-                        text="⬅️  Go Back", callback_data=f"good {videoid}|{user_id}"
+                        text="↩️ Back", callback_data=f"good {videoid}|{user_id}"
                     ),
-                    InlineKeyboardButton(text="🗑 Close", callback_data=f"close2"),
                 ],
             ]
         )
@@ -266,9 +263,8 @@ async def getspy(_, CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton(
-                        text="⬅️  Go Back", callback_data=f"good {videoid}|{user_id}"
+                        text="↩️ Back", callback_data=f"good {videoid}|{user_id}"
                     ),
-                    InlineKeyboardButton(text="🗑 Close", callback_data=f"close2"),
                 ],
             ]
         )
@@ -288,9 +284,8 @@ async def getspy(_, CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton(
-                        text="⬅️  Go Back", callback_data=f"good {videoid}|{user_id}"
+                        text="↩️ Back", callback_data=f"good {videoid}|{user_id}"
                     ),
-                    InlineKeyboardButton(text="🗑 Close", callback_data=f"close2"),
                 ],
             ]
         )
@@ -311,9 +306,8 @@ async def getspy(_, CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton(
-                        text="⬅️  Go Back", callback_data=f"good {videoid}|{user_id}"
+                        text="↩️ Back", callback_data=f"good {videoid}|{user_id}"
                     ),
-                    InlineKeyboardButton(text="🗑 Close", callback_data=f"close2"),
                 ],
             ]
         )
@@ -351,9 +345,8 @@ async def ytdata(_, CallbackQuery):
             ],
             [
                 InlineKeyboardButton(
-                    text="⬅️  Go Back", callback_data=f"good {videoid}|{user_id}"
+                    text="↩️ Back", callback_data=f"good {videoid}|{user_id}"
                 ),
-                InlineKeyboardButton(text="🗑 Close", callback_data=f"close2"),
             ],
         ]
     )
@@ -361,11 +354,11 @@ async def ytdata(_, CallbackQuery):
 
 
 inl = InlineKeyboardMarkup(
-    [[InlineKeyboardButton(text="Downloading......", callback_data=f"down")]]
+    [[InlineKeyboardButton(text="📥 Downloading......", callback_data=f"down")]]
 )
 
 upl = InlineKeyboardMarkup(
-    [[InlineKeyboardButton(text="Uploading......", callback_data=f"down")]]
+    [[InlineKeyboardButton(text="📤 Uploading......", callback_data=f"down")]]
 )
 
 
@@ -378,9 +371,8 @@ def inl_mark(videoid, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="⬅️  Go Back", callback_data=f"good {videoid}|{user_id}"
+                text="↩️ Back", callback_data=f"good {videoid}|{user_id}"
             ),
-            InlineKeyboardButton(text="🗑 Close", callback_data=f"close2"),
         ],
     ]
     return buttons
@@ -416,12 +408,11 @@ async def boom(_, CallbackQuery):
         reply_markup=inl,
     )
     fetched = f"""
-**Track Downloaded**
-
-❇️**Title:** {x["title"]}
-⏳**Duration:** {round(x["duration"] / 60)} Mins
-👀**Views:** __{x["view_count"]}__
-🎥**Channel Name:** {x["uploader"]}
+📥 **Track Downloaded**
+├-☉️⇝ **Title:** {x["title"]}
+├-☉️⇝ **Duration:** {round(x["duration"] / 60)} Mins
+├-☉️⇝ **Views:** __{x["view_count"]}__
+└-☉️⇝ **Channel Name:** {x["uploader"]}
 
 __Youtube Inline Download Powered By Aries Music__ """
     link = x["webpage_url"]
