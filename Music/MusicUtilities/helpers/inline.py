@@ -49,7 +49,6 @@ def others_markup(videoid, user_id):
             InlineKeyboardButton(
                 text="↩️ Back", callback_data=f"goback {videoid}|{user_id}"
             ),
-            InlineKeyboardButton(text="🗑 Close", callback_data=f"close2"),
         ],
     ]
     return buttons
