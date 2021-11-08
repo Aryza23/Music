@@ -200,7 +200,7 @@ Downloading....
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
                     caption=(
-                        f"🎥<b>__Started Playing:__ </b>[{title[:25]}]({url}) \n⏳<b>__Duration:__</b> {duration} Mins\n💡<b>__Info:__</b> [Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n👤**__Requested by:__** {semx.mention}"
+                        f"├-☉️⇝ <b>__Started Playing:__ </b>[{title[:25]}]({url}) \n├-☉️⇝ <b>__Duration:__</b> {duration} Mins\n├-☉️⇝ <b>__Info:__</b> [More Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n├-☉️⇝ **__Requested by:__** {semx.mention} \n└-☉️⇝ **Powered by:** __@IdzXartez__"
                     ),
                 )
                 os.remove(thumb)
@@ -237,7 +237,7 @@ Downloading....
                     chat_id,
                     photo=f"downloads/{_chat_}final.png",
                     reply_markup=InlineKeyboardMarkup(buttons),
-                    caption=f"🎥<b>__Started Playing:__</b> {title} \n⏳<b>__Duration:__</b> {duration} \n👤<b>__Requested by:__ </b> {username}",
+                    caption=f"├-☉️⇝ <b>__Started Playing:__</b> {title} \n├-☉️⇝ <b>__Duration:__</b> {duration} \n├-☉️⇝ <b>__Requested by:__ </b> {username} \n└-☉️⇝ **Powered by:** __@IdzXartez__",
                 )
                 return
 
