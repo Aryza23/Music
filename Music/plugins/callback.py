@@ -386,7 +386,7 @@ async def skipvc(_, CallbackQuery):
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
                     caption=(
-                        f"<b>__Skipped Voice Chat By {rpk}__</b>\n\n🎥<b>__Started Playing:__ </b>[{title[:25]}]({url}) \n⏳<b>__Duration:__</b> {duration} Mins\n👤**__Requested by:__** {semx.mention}"
+                        f"├-☉️⇝ <b>__Skipped Voice Chat By {rpk}__</b>\n\n├-☉️⇝ <b>__Started Playing:__ </b>[{title[:25]}]({url}) \n├-☉️⇝ <b>__Duration:__</b> {duration} Mins\n├-☉️⇝ **__Requested by:__** {semx.mention} \n└-☉️⇝ **Powered by:** __@IdzXartez__"
                     ),
                 )
                 os.remove(thumb)
@@ -425,7 +425,7 @@ async def skipvc(_, CallbackQuery):
                 await CallbackQuery.message.reply_photo(
                     photo=f"downloads/{_chat_}final.png",
                     reply_markup=InlineKeyboardMarkup(buttons),
-                    caption=f"<b>__Skipped Voice Chat By {rpk}__</b>\n\n🎥<b>__Started Playing:__</b> {title} \n⏳<b>__Duration:__</b> {duration} \n👤<b>__Requested by:__ </b> {username}",
+                    caption=f"├-☉️⇝ <b>__Skipped Voice Chat By {rpk}__</b>\n\n├-☉️⇝ <b>__Started Playing:__</b> {title} \n├-☉️⇝ <b>__Duration:__</b> {duration} \n├-☉️⇝ <b>__Requested by:__ </b> {username} \n└-☉️⇝ **Powered by:** __@IdzXartez__",
                 )
                 return
 
@@ -618,7 +618,7 @@ Personal Playlist Playing."""
                         photo=thumb,
                         reply_markup=InlineKeyboardMarkup(buttons),
                         caption=(
-                            f"🎥<b>__Playing:__ </b>[{title[:25]}]({url}) \n⏳<b>__Duration:__</b> {duration} \n💡<b>__Info:__</b> [Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n👤**__Requested by:__** {checking}"
+                            f"├-☉️⇝ <b>__Playing:__ </b>[{title[:25]}]({url}) \n├-☉️⇝ <b>__Duration:__</b> {duration} \n├-☉️⇝ <b>__Info:__</b> [More Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n├-☉️⇝ **__Requested by:__** {checking} \n└-☉️⇝ **Powered by:** __@IdzXartez__"
                         ),
                     )
                     os.remove(thumb)
@@ -796,7 +796,7 @@ Group Playlist Playing."""
                         photo=thumb,
                         reply_markup=InlineKeyboardMarkup(buttons),
                         caption=(
-                            f"🎥<b>__Playing:__ </b>[{title[:25]}]({url}) \n⏳<b>__Duration:__</b> {duration} \n💡<b>__Info:__</b> [Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n👤**__Requested by:__** {checking}"
+                            f"├-☉️⇝ <b>__Playing:__ </b>[{title[:25]}]({url}) \n├-☉️⇝ <b>__Duration:__</b> {duration} \n├-☉️⇝ <b>__Info:__</b> [More Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n├-☉️⇝ **__Requested by:__** {checking} \n└-☉️⇝ **Powered by:** __@IdzXartez__"
                         ),
                     )
                     os.remove(thumb)
@@ -923,7 +923,7 @@ async def pla_playylistt(_, CallbackQuery):
     count = 0
     if not _count:
         sex = await CallbackQuery.message.reply_text(
-            "Welcome To Music's Playlist Feature.\n\nGenerating Your Playlist In Database...Please wait."
+            "Welcome To Aries Music's Playlist Feature.\n\nGenerating Your Playlist In Database...Please wait."
         )
         await asyncio.sleep(2)
         await sex.delete()
@@ -1099,7 +1099,7 @@ async def cbgroupdel(_, CallbackQuery):
     _playlist = await get_note_names(CallbackQuery.message.chat.id)
     if not _playlist:
         return await CallbackQuery.message.reply_text(
-            "Group has no Playlist on Music's Server"
+            "Group has no Playlist on Aries Music's Server"
         )
     else:
         titlex = []
@@ -1117,7 +1117,7 @@ async def delplcb(_, CallbackQuery):
     _playlist = await get_note_names(CallbackQuery.from_user.id)
     if not _playlist:
         return await CallbackQuery.message.reply_text(
-            "You have no Playlist on Music's Server"
+            "You have no Playlist on Aries Music's Server"
         )
     else:
         titlex = []
