@@ -4,7 +4,7 @@ asyncio
 ffmpeg-python
 pillow
 git+https://github.com/pyrogram/pyrogram@master
-py-tgcalls==0.8.1rc1
+py-tgcalls==1.9.7rbc15
 pytube
 wget
 python-dotenv
