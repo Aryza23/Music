@@ -248,7 +248,7 @@ async def play(_, message: Message):
         await LOG_CHAT(message, what)
         query = message.text.split(None, 1)[1]
         mystic = await message.reply_text("Processing Url")
-        ydl_opts = {"format": "bestaudio"}
+        ydl_opts = {"format": "bestaudio[extm4a]"}
         try:
             results = VideosSearch(query, limit=1)
             for result in results.result()["result"]:
