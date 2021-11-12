@@ -14,9 +14,11 @@ def play_markup(videoid, user_id):
             InlineKeyboardButton(
                 text="🎛 Menu", callback_data=f"other {videoid}|{user_id}"
             ),
-        ]
-    ]
-    return buttons
+        ],
+        [InlineKeyboardButton(text="🗑 Close", callback_data=f"close2")],
+    ]
+    return buttons
+
 
 def others_markup(videoid, user_id):
     buttons = [
