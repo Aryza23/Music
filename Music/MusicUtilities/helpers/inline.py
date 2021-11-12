@@ -15,7 +15,7 @@ def play_markup(videoid, user_id):
                 text="🎛 Menu", callback_data=f"other {videoid}|{user_id}"
             ),
         ]
-     ]
+    ]
 
 
 return buttons
