@@ -14,7 +14,7 @@ import lyricsgenius
 import re
 
 
-@Client.on_callback_query(filters.regex(pattern=r"lirik"))
+@Client.on_callback_query(filters.regex(pattern=r"lyrics"))
 async def lyricssex(_, CallbackQuery):
     callback_data = CallbackQuery.data.strip()
     callback_request = callback_data.split(None, 1)[1]
