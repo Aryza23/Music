@@ -3,6 +3,7 @@ aiofiles
 asyncio
 ffmpeg-python
 librosa
+numpy
 pillow
 git+https://github.com/pyrogram/pyrogram@master
 py-tgcalls==0.8.1rc1
