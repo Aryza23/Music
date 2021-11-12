@@ -15,14 +15,10 @@ def play_markup(videoid, user_id):
                 text="🎛 Menu", callback_data=f"other {videoid}|{user_id}"
             ),
         ],
-        [
-            InlineKeyboardButton(text="⇜", callback_data=f"popat 1|{query}|{user_id}"),
-            InlineKeyboardButton(text="🗑 Close", callback_data=f"ppcl2 smex|{user_id}"),
-            InlineKeyboardButton(text="⇝", callback_data=f"popat 1|{query}|{user_id}"),
-        ],
+        [InlineKeyboardButton(text="🔎 Search Lyrics", callback_data=f'lyrics {videoid}|{user_id}')],
     ]
 
-    return buttons
+return buttons
 
 
 def others_markup(videoid, user_id):
