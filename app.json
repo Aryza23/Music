@@ -64,6 +64,9 @@
     },
     {
       "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/iwarshak/sound-buildpack.git"
     }
   ]
 }
