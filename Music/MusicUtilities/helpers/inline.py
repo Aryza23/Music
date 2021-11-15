@@ -115,9 +115,13 @@ def search_markup(
             ),
         ],
         [
-            InlineKeyboardButton(text="[⇜]", callback_data=f"popat 1|{query}|{user_id}"),
+            InlineKeyboardButton(
+                text="[⇜]", callback_data=f"popat 1|{query}|{user_id}"
+            ),
             InlineKeyboardButton(text="[❌]", callback_data=f"ppcl2 smex|{user_id}"),
-            InlineKeyboardButton(text="[⇝]", callback_data=f"popat 1|{query}|{user_id}"),
+            InlineKeyboardButton(
+                text="[⇝]", callback_data=f"popat 1|{query}|{user_id}"
+            ),
         ],
     ]
     return buttons
@@ -158,9 +162,13 @@ def search_markup2(
             ),
         ],
         [
-            InlineKeyboardButton(text="[⇜]", callback_data=f"popat 2|{query}|{user_id}"),
+            InlineKeyboardButton(
+                text="[⇜]", callback_data=f"popat 2|{query}|{user_id}"
+            ),
             InlineKeyboardButton(text="[❌]", callback_data=f"ppcl2 smex|{user_id}"),
-            InlineKeyboardButton(text="[⇝]", callback_data=f"popat 2|{query}|{user_id}"),
+            InlineKeyboardButton(
+                text="[⇝]", callback_data=f"popat 2|{query}|{user_id}"
+            ),
         ],
     ]
     return buttons
