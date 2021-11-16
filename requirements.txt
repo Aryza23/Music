@@ -1,4 +1,4 @@
-aiohttp
+aiohttp[speedups]
 aiofiles
 asyncio
 ffmpeg-python
