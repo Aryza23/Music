@@ -11,7 +11,7 @@ wget
 python-dotenv
 search-engine-parser
 tgcrypto
-youtube_search_python==1.4.6
+youtube_search_python
 youtube-search
 speedtest-cli
 cryptography
