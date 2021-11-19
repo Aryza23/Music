@@ -5,13 +5,13 @@ ffmpeg-python
 numpy
 pillow
 git+https://github.com/pyrogram/pyrogram@master
-py-tgcalls==0.8.1
+py-tgcalls==0.8.1rc1
 pytube
 wget
 python-dotenv
 search-engine-parser
 tgcrypto
-youtube-search-python==1.5.1
+youtube-search-python==1.4.9
 youtube-search
 speedtest-cli
 cryptography
