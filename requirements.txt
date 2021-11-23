@@ -12,13 +12,13 @@ python-dotenv
 search-engine-parser
 tgcrypto
 httpx
-youtube_search_python ==1.4.6
+youtube_search_python
 youtube-search
 speedtest-cli
 cryptography
 dnspython
 future
-googletrans==4.0.0-rc1
+googletrans
 hurry.filesize
 motor
 psutil
@@ -27,7 +27,8 @@ pyromod
 requests
 speedtest-cli
 uvloop
-git+https://github.com/DeCodeOwner/yt-dl@master
+yt-dlp
 telegraph
 hachoir
 lyricsgenius
+httpx>=0.14.2
