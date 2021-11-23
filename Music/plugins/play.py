@@ -403,7 +403,7 @@ async def play(_, message: Message):
         hmo = await message.reply_photo(
             photo=thumb,
             caption=(
-                f"**Aries Music**\n\n➊ <b>{title1}</b>\n├-☉️⇝ **Duration:** {duration1}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n└-☉️⇝ **Powered by:** __@IdzXartez__\n\n➋ <b>{title2}</b>\n├-☉️⇝ **Duration:** {duration2}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n└-☉️⇝ **Powered by:** __@IdzXartez__\n\n➌ <b>{title3}</b>\n├-☉️⇝ **Duration:** {duration3}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n└-☉️⇝ **Powered by:** __@IdzX@artez__\n\n➍ <b>{title4}</b>\n├-☉️⇝ **Duration:** {duration4}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n└-☉️⇝ **Powered by:** __@IdzXartez__\n\n➎ <b>{title5}</b>\n├-☉️⇝ **Duration:** {duration5}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>\n└-☉️⇝ **Powered by:** __@IdzXartez__\n"
+                f"**Aries Music**\n\n➊ <b>{title1}</b>\n├-☉️⇝ **Duration:** {duration1}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n└-☉️⇝ **Powered by:** __Aries O.S__\n\n➋ <b>{title2}</b>\n├-☉️⇝ **Duration:** {duration2}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n└-☉️⇝ **Powered by:** __Aries O.S__\n\n➌ <b>{title3}</b>\n├-☉️⇝ **Duration:** {duration3}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n└-☉️⇝ **Powered by:** __Aries O.S__\n\n➍ <b>{title4}</b>\n├-☉️⇝ **Duration:** {duration4}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n└-☉️⇝ **Powered by:** __Aries O.S__\n\n➎ <b>{title5}</b>\n├-☉️⇝ **Duration:** {duration5}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>\n└-☉️⇝ **Powered by:** __Aries O.S__\n"
             ),
             reply_markup=InlineKeyboardMarkup(buttons),
         )
@@ -439,7 +439,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo=thumb,
             caption=(
-                f"├-☉️⇝ <b>__Song:__</b>[{title[:25]}]({link}) \n├-☉️⇝ <b>__Duration:__</b> {duration} \n├-☉️⇝ <b>__Requested by:__ </b>{checking} \n├-☉️⇝ <b>__Queued at:__</b> <b>#{position}!</b>\n└-☉️⇝ **Powered by:** __@IdzXartez__"
+                f"├-☉️⇝ <b>__Song:__</b>[{title[:25]}]({link}) \n├-☉️⇝ <b>__Duration:__</b> {duration} \n├-☉️⇝ <b>__Requested by:__ </b>{checking} \n├-☉️⇝ <b>__Queued at:__</b> <b>#{position}!</b>\n└-☉️⇝ **Powered by:** __Aries O.S__"
             ),
             reply_markup=InlineKeyboardMarkup(buttons),
         )
@@ -474,7 +474,7 @@ async def play(_, message: Message):
             photo=thumb,
             reply_markup=InlineKeyboardMarkup(buttons),
             caption=(
-                f"├-☉️⇝ [{title[:25]}]({link}) \n├-☉️⇝ <b>__Duration:__</b> {duration} \n├-☉️⇝ <b>__Requested by:__</b>{checking} \n└-☉️⇝ **Powered by:** __@IdzXartez__"
+                f"├-☉️⇝ [{title[:25]}]({link}) \n├-☉️⇝ <b>__Duration:__</b> {duration} \n├-☉️⇝ <b>__Requested by:__</b>{checking} \n└-☉️⇝ **Powered by:** __Aries O.S__"
             ),
         )
         return await mystic.delete()
@@ -621,7 +621,7 @@ async def startyuplay(_, CallbackQuery):
         m = await CallbackQuery.message.reply_photo(
             photo=thumb,
             caption=(
-                f"├-☉️⇝ <b>__Song:__ </b>[{title[:25]}]({url}) \n├-☉️⇝ <b>__Duration:__</b> {duration} \n├-☉️⇝ <b>__Info:__</b> [More Information](https://t.me/{BOT_USERNAME}?start=info_{id})\n├-☉️⇝ <b>__Requested by:__ </b>{checking} \n├-☉️⇝ <b>__Queued at:__</b> <b>#{position}!</b>\n└-☉️⇝ **Powered by:** __@IdzXartez__"
+                f"├-☉️⇝ <b>__Song:__ </b>[{title[:25]}]({url}) \n├-☉️⇝ <b>__Duration:__</b> {duration} \n├-☉️⇝ <b>__Info:__</b> [More Information](https://t.me/{BOT_USERNAME}?start=info_{id})\n├-☉️⇝ <b>__Requested by:__ </b>{checking} \n├-☉️⇝ <b>__Queued at:__</b> <b>#{position}!</b>\n└-☉️⇝ **Powered by:** __Aries O.S__"
             ),
             reply_markup=InlineKeyboardMarkup(buttons),
         )
@@ -645,7 +645,7 @@ async def startyuplay(_, CallbackQuery):
             photo=thumb,
             reply_markup=InlineKeyboardMarkup(buttons),
             caption=(
-                f"├-☉️⇝ [{title[:25]}]({url}) \n├-☉️⇝ <b>__Duration:__</b> {duration} \n├-☉️⇝ <b>__Info:__</b> [More Information](https://t.me/{BOT_USERNAME}?start=info_{id})\n├-☉️⇝ **__Requested by:__** {checking} \n└-☉️⇝ **Powered by:** __@IdzXartez__"
+                f"├-☉️⇝ [{title[:25]}]({url}) \n├-☉️⇝ <b>__Duration:__</b> {duration} \n├-☉️⇝ <b>__Info:__</b> [More Information](https://t.me/{BOT_USERNAME}?start=info_{id})\n├-☉️⇝ **__Requested by:__** {checking} \n└-☉️⇝ **Powered by:** __Aries O.S__"
             ),
         )
         os.remove(thumb)
@@ -721,7 +721,7 @@ async def popat(_, CallbackQuery):
             query,
         )
         await CallbackQuery.edit_message_text(
-            f"➏ <b>{title6}</b>\n├-☉️⇝ **Duration:** {duration6}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID6})__</u>\n└-☉️⇝ **Powered by:** __@IdzXartez__\n\n➐ <b>{title7}</b>\n├-☉️⇝ **Duration:** {duration7}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID7})__</u>\n└-☉️⇝ **Powered by:** __@IdzXartez__\n\n➑ <b>{title8}</b>\n├-☉️⇝ **Duration:** {duration8}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID8})__</u>\n└-☉️⇝ **Powered by:** __@IdzXartez__\n\n➒ <b>{title9}</b>\n├-☉️⇝ **Duration:** {duration9}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID9})__</u>\n└-☉️⇝ **Powered by:** __@IdzXartez__\n\n➓ <b>{title10}</b>\n├-☉️⇝ **Duration:** {duration10}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID10})__</u>\n└-☉️⇝ **Powered by:** __@IdzXartez__\n",
+            f"➏ <b>{title6}</b>\n├-☉️⇝ **Duration:** {duration6}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID6})__</u>\n└-☉️⇝ **Powered by:** __Aries O.S__\n\n➐ <b>{title7}</b>\n├-☉️⇝ **Duration:** {duration7}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID7})__</u>\n└-☉️⇝ **Powered by:** __Aries O.S__\n\n➑ <b>{title8}</b>\n├-☉️⇝ **Duration:** {duration8}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID8})__</u>\n└-☉️⇝ **Powered by:** __Aries O.S__\n\n➒ <b>{title9}</b>\n├-☉️⇝ **Duration:** {duration9}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID9})__</u>\n└-☉️⇝ **Powered by:** __Aries O.S__\n\n➓ <b>{title10}</b>\n├-☉️⇝ **Duration:** {duration10}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID10})__</u>\n└-☉️⇝ **Powered by:** __Aries O.S__\n",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
         disable_web_page_preview = True
@@ -742,7 +742,7 @@ async def popat(_, CallbackQuery):
             query,
         )
         await CallbackQuery.edit_message_text(
-            f"➊ <b>{title1}</b>\n├-☉️⇝ **Duration:** {duration1}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n└-☉️⇝ **Powered by:** __@IdzXartez__\n\n➋ <b>{title2}</b>\n├-☉️⇝ **Duration:** {duration2}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n└-☉️⇝ **Powered by:** __@IdzXartez__\n\n➌ <b>{title3}</b>\n├-☉️⇝ **Duration:** {duration3}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n└-☉️⇝ **Powered by:** __@IdzX@artez__\n\n➍ <b>{title4}</b>\n├-☉️⇝ **Duration:** {duration4}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n└-☉️⇝ **Powered by:** __@IdzXartez__\n\n➎ <b>{title5}</b>\n├-☉️⇝ **Duration:** {duration5}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>\n└-☉️⇝ **Powered by:** __@IdzXartez__\n",
+            f"➊ <b>{title1}</b>\n├-☉️⇝ **Duration:** {duration1}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n└-☉️⇝ **Powered by:** __Aries O.S__\n\n➋ <b>{title2}</b>\n├-☉️⇝ **Duration:** {duration2}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n└-☉️⇝ **Powered by:** __Aries O.S__\n\n➌ <b>{title3}</b>\n├-☉️⇝ **Duration:** {duration3}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n└-☉️⇝ **Powered by:** __Aries O.S__\n\n➍ <b>{title4}</b>\n├-☉️⇝ **Duration:** {duration4}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n└-☉️⇝ **Powered by:** __Aries O.S__\n\n➎ <b>{title5}</b>\n├-☉️⇝ **Duration:** {duration5}\n├-☉️⇝ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>\n└-☉️⇝ **Powered by:** __Aries O.S__\n",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
         disable_web_page_preview = True
