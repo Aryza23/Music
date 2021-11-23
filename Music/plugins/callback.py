@@ -386,7 +386,7 @@ async def skipvc(_, CallbackQuery):
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
                     caption=(
-                        f"├-☉️⇝ <b>__Skipped Voice Chat By {rpk}__</b>\n\n├-☉️⇝ <b>__Started Playing:__ </b>[{title[:25]}]({url}) \n├-☉️⇝ <b>__Duration:__</b> {duration} Mins\n├-☉️⇝ **__Requested by:__** {semx.mention} \n└-☉️⇝ **Powered by:** __@IdzXartez__"
+                        f"<b>__Skipped Voice Chat By {rpk}__</b>\n\n├-☉️⇝ <b>__Started Playing:__ </b>[{title[:25]}]({url}) \n├-☉️⇝ <b>__Duration:__</b> {duration} Mins\n├-☉️⇝ **__Requested by:__** {semx.mention} \n└-☉️⇝ **Powered by:** __Aries O.S ⚡️__"
                     ),
                 )
                 os.remove(thumb)
@@ -425,7 +425,7 @@ async def skipvc(_, CallbackQuery):
                 await CallbackQuery.message.reply_photo(
                     photo=f"downloads/{_chat_}final.png",
                     reply_markup=InlineKeyboardMarkup(buttons),
-                    caption=f"├-☉️⇝ <b>__Skipped Voice Chat By {rpk}__</b>\n\n├-☉️⇝ <b>__Started Playing:__</b> {title} \n├-☉️⇝ <b>__Duration:__</b> {duration} \n├-☉️⇝ <b>__Requested by:__ </b> {username} \n└-☉️⇝ **Powered by:** __@IdzXartez__",
+                    caption=f"<b>__Skipped Voice Chat By {rpk}__</b>\n\n├-☉️⇝ <b>__Started Playing:__</b> {title} \n├-☉️⇝ <b>__Duration:__</b> {duration} \n├-☉️⇝ <b>__Requested by:__ </b> {username} \n└-☉️⇝ **Powered by:** __Aries O.S ⚡️__",
                 )
                 return
 
@@ -618,7 +618,7 @@ Personal Playlist Playing."""
                         photo=thumb,
                         reply_markup=InlineKeyboardMarkup(buttons),
                         caption=(
-                            f"├-☉️⇝ <b>__Playing:__ </b>[{title[:25]}]({url}) \n├-☉️⇝ <b>__Duration:__</b> {duration} \n├-☉️⇝ <b>__Info:__</b> [More Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n├-☉️⇝ **__Requested by:__** {checking} \n└-☉️⇝ **Powered by:** __@IdzXartez__"
+                            f"<b>__Playing:__ </b>[{title[:25]}]({url}) \n├-☉️⇝ <b>__Duration:__</b> {duration} \n├-☉️⇝ <b>__Info:__</b> [More Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n├-☉️⇝ **__Requested by:__** {checking} \n└-☉️⇝ **Powered by:** __Aries O.S ⚡️__"
                         ),
                     )
                     os.remove(thumb)
@@ -796,7 +796,7 @@ Group Playlist Playing."""
                         photo=thumb,
                         reply_markup=InlineKeyboardMarkup(buttons),
                         caption=(
-                            f"├-☉️⇝ <b>__Playing:__ </b>[{title[:25]}]({url}) \n├-☉️⇝ <b>__Duration:__</b> {duration} \n├-☉️⇝ <b>__Info:__</b> [More Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n├-☉️⇝ **__Requested by:__** {checking} \n└-☉️⇝ **Powered by:** __@IdzXartez__"
+                            f"<b>__Playing:__ </b>[{title[:25]}]({url}) \n├-☉️⇝ <b>__Duration:__</b> {duration} \n├-☉️⇝ <b>__Info:__</b> [More Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n├-☉️⇝ **__Requested by:__** {checking} \n└-☉️⇝ **Powered by:** __Aries O.S ⚡️__"
                         ),
                     )
                     os.remove(thumb)
