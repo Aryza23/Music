@@ -167,7 +167,7 @@ async def pause_cmd(_, message):
                 deleted = await delete_playlist(message.from_user.id, note)
                 if deleted:
                     return await message.reply_text(
-                        f"**Deleted the {count} music in playlist**"
+                        f"**Deleted the No:{count} music in playlist**"
                     )
                 else:
                     return await message.reply_text(
@@ -211,7 +211,7 @@ async def delgroupplaylist(_, message):
                 deleted = await delete_playlist(message.chat.id, note)
                 if deleted:
                     return await message.reply_text(
-                        f"**Deleted the {count} music in group's playlist**"
+                        f"**Deleted the No:{count} music in group's playlist**"
                     )
                 else:
                     return await message.reply_text(
