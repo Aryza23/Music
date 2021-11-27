@@ -82,6 +82,23 @@ async def member_permissions(chat_id: int, user_id: int):
 
 from Music.MusicUtilities.helpers.administrator import adminsOnly
 
+@app.on_message(command(["vol", "volume"]))
+async def change_volume(_, message):
+    range = message.command[1]
+    chat_id = message.chat.id
+    permission = "can_manage_voice_chats"
+    m = await adminsOnly(permission, message)
+    if m == 1:
+        return
+    if message.sender_chat:
+        await message.reply_text(
+            "❌ You're an Anonymous Admin!\n\n» Revert back to User Account.",
+        )
+    try:
+        await music.pytgcalls.change_volume_call(chat_id, volume=int(range))
+        await message.reply_text(f"🔊 Volume changed to: {range}%")
+    except Exception as e:
+        await message.reply_text(f"❌ Invalid range, volume range only 1-200")
 
 @app.on_message(filters.command("cleandb"))
 async def stop_cmd(_, message):
