@@ -4,7 +4,7 @@ asyncio
 ffmpeg-python
 numpy
 pillow
-git+https://github.com/pyrogram/pyrogram@master
+pyrogram
 py-tgcalls
 pytube
 wget
@@ -27,7 +27,7 @@ pyromod
 requests
 speedtest-cli
 uvloop
-yt-dlp
+yt-dlp==2021.11.10.1
 telegraph
 hachoir
 lyricsgenius
