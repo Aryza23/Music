@@ -10,9 +10,7 @@ from pyrogram.types import (
 def play_markup(videoid, user_id):
     return [
         [
-            InlineKeyboardButton(
-                text="💬 Support", url="https://t.me/idzeroidsupport"
-            ),
+            InlineKeyboardButton(text="💬 Support", url="https://t.me/idzeroidsupport"),
             InlineKeyboardButton(
                 text="🎛 Menu", callback_data=f"other {videoid}|{user_id}"
             ),
@@ -118,9 +116,7 @@ def search_markup(
             InlineKeyboardButton(
                 text="[⇜]", callback_data=f"popat 1|{query}|{user_id}"
             ),
-            InlineKeyboardButton(
-                text="[❌]", callback_data=f"ppcl2 smex|{user_id}"
-            ),
+            InlineKeyboardButton(text="[❌]", callback_data=f"ppcl2 smex|{user_id}"),
             InlineKeyboardButton(
                 text="[⇝]", callback_data=f"popat 1|{query}|{user_id}"
             ),
@@ -166,9 +162,7 @@ def search_markup2(
             InlineKeyboardButton(
                 text="[⇜]", callback_data=f"popat 2|{query}|{user_id}"
             ),
-            InlineKeyboardButton(
-                text="[❌]", callback_data=f"ppcl2 smex|{user_id}"
-            ),
+            InlineKeyboardButton(text="[❌]", callback_data=f"ppcl2 smex|{user_id}"),
             InlineKeyboardButton(
                 text="[⇝]", callback_data=f"popat 2|{query}|{user_id}"
             ),

@@ -116,7 +116,7 @@ chat_watcher_group = 3
 
 def time_to_seconds(time):
     stringt = str(time)
-    return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(":"))))
+    return sum(int(x) * 60**i for i, x in enumerate(reversed(stringt.split(":"))))
 
 
 @Client.on_message(command(["play", "play@idzeroid_bot"]))

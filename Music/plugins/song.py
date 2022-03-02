@@ -88,7 +88,7 @@ chat_watcher_group = 3
 
 def time_to_seconds(time):
     stringt = str(time)
-    return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(":"))))
+    return sum(int(x) * 60**i for i, x in enumerate(reversed(stringt.split(":"))))
 
 
 @Client.on_message(command(["music", "song", "download"]))
@@ -387,15 +387,9 @@ def search_markup(
             ),
         ],
         [
-            InlineKeyboardButton(
-                text="⇜", callback_data=f"chonga 1|{query}|{user_id}"
-            ),
-            InlineKeyboardButton(
-                text="🗑 Close", callback_data=f"ppcl2 smex|{user_id}"
-            ),
-            InlineKeyboardButton(
-                text="⇝", callback_data=f"chonga 1|{query}|{user_id}"
-            ),
+            InlineKeyboardButton(text="⇜", callback_data=f"chonga 1|{query}|{user_id}"),
+            InlineKeyboardButton(text="🗑 Close", callback_data=f"ppcl2 smex|{user_id}"),
+            InlineKeyboardButton(text="⇝", callback_data=f"chonga 1|{query}|{user_id}"),
         ],
     ]
 
@@ -435,25 +429,22 @@ def search_markup2(
             ),
         ],
         [
-            InlineKeyboardButton(
-                text="⇜", callback_data=f"chonga 2|{query}|{user_id}"
-            ),
-            InlineKeyboardButton(
-                text="🗑 Close", callback_data=f"ppcl2 smex|{user_id}"
-            ),
-            InlineKeyboardButton(
-                text="⇝", callback_data=f"chonga 2|{query}|{user_id}"
-            ),
+            InlineKeyboardButton(text="⇜", callback_data=f"chonga 2|{query}|{user_id}"),
+            InlineKeyboardButton(text="🗑 Close", callback_data=f"ppcl2 smex|{user_id}"),
+            InlineKeyboardButton(text="⇝", callback_data=f"chonga 2|{query}|{user_id}"),
         ],
     ]
 
 
 def gets(videoid, user_id):
-    return [[
+    return [
+        [
             InlineKeyboardButton(
                 text="📥 Audio", callback_data=f"gets audio|{videoid}|{user_id}"
             ),
             InlineKeyboardButton(
                 text="📥 Video", callback_data=f"gets video|{videoid}|{user_id}"
             ),
-        ], [InlineKeyboardButton(text="🗑 Close", callback_data="close2")]]
+        ],
+        [InlineKeyboardButton(text="🗑 Close", callback_data="close2")],
+    ]

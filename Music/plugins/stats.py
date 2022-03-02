@@ -34,15 +34,15 @@ async def gstats(_, message):
     modules_count = "17"
     sc = platform.system()
     arch = platform.machine()
-    ram = f'{str(round(psutil.virtual_memory().total / (1024.0 ** 3)))} GB'
+    ram = f"{str(round(psutil.virtual_memory().total / (1024.0 ** 3)))} GB"
     bot_uptime = int(time.time() - Music_START_TIME)
     uptime = f"{get_readable_time((bot_uptime))}"
     hdd = psutil.disk_usage("/")
-    total = hdd.total / (1024.0 ** 3)
+    total = hdd.total / (1024.0**3)
     total = str(total)
-    used = hdd.used / (1024.0 ** 3)
+    used = hdd.used / (1024.0**3)
     used = str(used)
-    free = hdd.free / (1024.0 ** 3)
+    free = hdd.free / (1024.0**3)
     free = str(free)
     msg = f"""
 **Global Stats of Aries Music Bot**:\n\n
