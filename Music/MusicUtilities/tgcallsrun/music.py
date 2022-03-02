@@ -126,50 +126,46 @@ Downloading....
                 title = x["title"]
 
                 def my_hook(d):
-                    if d["status"] == "downloading":
-                        percentage = d["_percent_str"]
-                        per = (str(percentage)).replace(".", "", 1).replace("%", "", 1)
-                        per = int(per)
-                        eta = d["eta"]
-                        speed = d["_speed_str"]
-                        size = d["_total_bytes_str"]
-                        bytesx = d["total_bytes"]
-                        if str(bytesx) in flex:
-                            pass
-                        else:
-                            flex[str(bytesx)] = 1
-                        if flex[str(bytesx)] == 1:
-                            flex[str(bytesx)] += 1
-                            mystic.edit(
-                                f"Downloading {title[:50]}\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec"
-                            )
-                        if per > 500:
-                            if flex[str(bytesx)] == 2:
-                                flex[str(bytesx)] += 1
-                                mystic.edit(
-                                    f"Downloading {title[:50]}...\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec"
-                                )
-                                print(
-                                    f"[{videoid}] Downloaded {percentage} at a speed of {speed} in {chat_title} | ETA: {eta} seconds"
-                                )
-                        if per > 800:
-                            if flex[str(bytesx)] == 3:
-                                flex[str(bytesx)] += 1
-                                mystic.edit(
-                                    f"Downloading {title[:50]}....\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec"
-                                )
-                                print(
-                                    f"[{videoid}] Downloaded {percentage} at a speed of {speed} in {chat_title} | ETA: {eta} seconds"
-                                )
-                        if per == 1000:
-                            if flex[str(bytesx)] == 4:
-                                flex[str(bytesx)] = 1
-                                mystic.edit(
-                                    f"Downloading {title[:50]}.....\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec"
-                                )
-                                print(
-                                    f"[{videoid}] Downloaded {percentage} at a speed of {speed} in {chat_title} | ETA: {eta} seconds"
-                                )
+                    if d["status"] != "downloading":
+                        return
+                    percentage = d["_percent_str"]
+                    per = (str(percentage)).replace(".", "", 1).replace("%", "", 1)
+                    per = int(per)
+                    eta = d["eta"]
+                    speed = d["_speed_str"]
+                    size = d["_total_bytes_str"]
+                    bytesx = d["total_bytes"]
+                    if str(bytesx) not in flex:
+                        flex[str(bytesx)] = 1
+                    if flex[str(bytesx)] == 1:
+                        flex[str(bytesx)] += 1
+                        mystic.edit(
+                            f"Downloading {title[:50]}\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec"
+                        )
+                    if per > 500 and flex[str(bytesx)] == 2:
+                        flex[str(bytesx)] += 1
+                        mystic.edit(
+                            f"Downloading {title[:50]}...\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec"
+                        )
+                        print(
+                            f"[{videoid}] Downloaded {percentage} at a speed of {speed} in {chat_title} | ETA: {eta} seconds"
+                        )
+                    if per > 800 and flex[str(bytesx)] == 3:
+                        flex[str(bytesx)] += 1
+                        mystic.edit(
+                            f"Downloading {title[:50]}....\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec"
+                        )
+                        print(
+                            f"[{videoid}] Downloaded {percentage} at a speed of {speed} in {chat_title} | ETA: {eta} seconds"
+                        )
+                    if per == 1000 and flex[str(bytesx)] == 4:
+                        flex[str(bytesx)] = 1
+                        mystic.edit(
+                            f"Downloading {title[:50]}.....\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec"
+                        )
+                        print(
+                            f"[{videoid}] Downloaded {percentage} at a speed of {speed} in {chat_title} | ETA: {eta} seconds"
+                        )
 
                 loop = asyncio.get_event_loop()
                 xx = await loop.run_in_executor(None, download, url, my_hook)

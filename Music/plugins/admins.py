@@ -99,7 +99,7 @@ async def change_volume(_, message):
         await music.pytgcalls.change_volume_call(chat_id, volume=int(range))
         await message.reply_text(f"🔊 Volume changed to: {range}%")
     except Exception as e:
-        await message.reply_text(f"❌ Invalid range, volume range only 1-200")
+        await message.reply_text("❌ Invalid range, volume range only 1-200")
 
 
 @app.on_message(filters.command("cleandb"))
@@ -129,11 +129,11 @@ async def pause_cmd(_, message):
         return
     checking = message.from_user.mention
     chat_id = message.chat.id
-    if not await is_active_chat(chat_id):
-        return await message.reply_text(
-            "I dont think if something's playing on voice chat"
-        )
-    elif not await is_music_playing(message.chat.id):
+    if (
+        not await is_active_chat(chat_id)
+        or await is_active_chat(chat_id)
+        and not await is_music_playing(message.chat.id)
+    ):
         return await message.reply_text(
             "I dont think if something's playing on voice chat"
         )
@@ -154,18 +154,17 @@ async def stop_cmd(_, message):
         return
     checking = message.from_user.mention
     chat_id = message.chat.id
-    if not await is_active_chat(chat_id):
+    if (
+        not await is_active_chat(chat_id)
+        or await is_active_chat(chat_id)
+        and await is_music_playing(chat_id)
+    ):
         return await message.reply_text(
             "I dont think if something's playing on voice chat"
         )
-    elif await is_music_playing(chat_id):
-        return await message.reply_text(
-            "I dont think if something's playing on voice chat"
-        )
-    else:
-        await music_on(chat_id)
-        await music.pytgcalls.resume_stream(chat_id)
-        await message.reply_text(f"✅ Voicechat Resumed by {checking}!")
+    await music_on(chat_id)
+    await music.pytgcalls.resume_stream(chat_id)
+    await message.reply_text(f"✅ Voicechat Resumed by {checking}!")
 
 
 @app.on_message(filters.command(["stop", "end"]))
@@ -240,54 +239,50 @@ async def stop_cmd(_, message):
                 videoid = afk
 
                 def my_hook(d):
-                    if d["status"] == "downloading":
-                        percentage = d["_percent_str"]
-                        per = (str(percentage)).replace(".", "", 1).replace("%", "", 1)
-                        per = int(per)
-                        eta = d["eta"]
-                        speed = d["_speed_str"]
-                        size = d["_total_bytes_str"]
-                        bytesx = d["total_bytes"]
-                        if str(bytesx) in flex:
-                            pass
-                        else:
-                            flex[str(bytesx)] = 1
-                        if flex[str(bytesx)] == 1:
-                            flex[str(bytesx)] += 1
-                            sedtime.sleep(1)
-                            mystic.edit(
-                                f"Downloading {title[:50]}\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec"
-                            )
-                        if per > 500:
-                            if flex[str(bytesx)] == 2:
-                                flex[str(bytesx)] += 1
-                                sedtime.sleep(0.5)
-                                mystic.edit(
-                                    f"Downloading {title[:50]}...\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec"
-                                )
-                                print(
-                                    f"[{videoid}] Downloaded {percentage} at a speed of {speed} in {chat_title} | ETA: {eta} seconds"
-                                )
-                        if per > 800:
-                            if flex[str(bytesx)] == 3:
-                                flex[str(bytesx)] += 1
-                                sedtime.sleep(0.5)
-                                mystic.edit(
-                                    f"Downloading {title[:50]}....\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec"
-                                )
-                                print(
-                                    f"[{videoid}] Downloaded {percentage} at a speed of {speed} in {chat_title} | ETA: {eta} seconds"
-                                )
-                        if per == 1000:
-                            if flex[str(bytesx)] == 4:
-                                flex[str(bytesx)] = 1
-                                sedtime.sleep(0.5)
-                                mystic.edit(
-                                    f"Downloading {title[:50]}.....\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec"
-                                )
-                                print(
-                                    f"[{videoid}] Downloaded {percentage} at a speed of {speed} in {chat_title} | ETA: {eta} seconds"
-                                )
+                    if d["status"] != "downloading":
+                        return
+                    percentage = d["_percent_str"]
+                    per = (str(percentage)).replace(".", "", 1).replace("%", "", 1)
+                    per = int(per)
+                    eta = d["eta"]
+                    speed = d["_speed_str"]
+                    size = d["_total_bytes_str"]
+                    bytesx = d["total_bytes"]
+                    if str(bytesx) not in flex:
+                        flex[str(bytesx)] = 1
+                    if flex[str(bytesx)] == 1:
+                        flex[str(bytesx)] += 1
+                        sedtime.sleep(1)
+                        mystic.edit(
+                            f"Downloading {title[:50]}\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec"
+                        )
+                    if per > 500 and flex[str(bytesx)] == 2:
+                        flex[str(bytesx)] += 1
+                        sedtime.sleep(0.5)
+                        mystic.edit(
+                            f"Downloading {title[:50]}...\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec"
+                        )
+                        print(
+                            f"[{videoid}] Downloaded {percentage} at a speed of {speed} in {chat_title} | ETA: {eta} seconds"
+                        )
+                    if per > 800 and flex[str(bytesx)] == 3:
+                        flex[str(bytesx)] += 1
+                        sedtime.sleep(0.5)
+                        mystic.edit(
+                            f"Downloading {title[:50]}....\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec"
+                        )
+                        print(
+                            f"[{videoid}] Downloaded {percentage} at a speed of {speed} in {chat_title} | ETA: {eta} seconds"
+                        )
+                    if per == 1000 and flex[str(bytesx)] == 4:
+                        flex[str(bytesx)] = 1
+                        sedtime.sleep(0.5)
+                        mystic.edit(
+                            f"Downloading {title[:50]}.....\n\n**FileSize:** {size}\n**Downloaded:** {percentage}\n**Speed:** {speed}\n**ETA:** {eta} sec"
+                        )
+                        print(
+                            f"[{videoid}] Downloaded {percentage} at a speed of {speed} in {chat_title} | ETA: {eta} seconds"
+                        )
 
                 loop = asyncio.get_event_loop()
                 xxx = await loop.run_in_executor(None, download, url, my_hook)

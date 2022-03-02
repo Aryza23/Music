@@ -35,10 +35,8 @@ async def ban_globally(_, message):
         else:
 
             await add_gban_user(user.id)
-            served_chats = []
             chats = await get_served_chats()
-            for chat in chats:
-                served_chats.append(int(chat["chat_id"]))
+            served_chats = [int(chat["chat_id"]) for chat in chats]
             m = await message.reply_text(
                 f"**Initializing Gobal Ban on {user.mention}**\n\nExpected Time : {len(served_chats)}"
             )
@@ -87,8 +85,7 @@ __**New Global Ban on Music**__
             await add_gban_user(user_id)
             served_chats = []
             chats = await get_served_chats()
-            for chat in chats:
-                served_chats.append(int(chat["chat_id"]))
+            served_chats.extend(int(chat["chat_id"]) for chat in chats)
             m = await message.reply_text(
                 f"**Initializing Gobal Ban on {mention}**\n\nExpected Time : {len(served_chats)}"
             )
@@ -144,7 +141,7 @@ async def unban_globally(_, message):
                 await message.reply_text("He's already free, why bully him?")
             else:
                 await remove_gban_user(user.id)
-                await message.reply_text(f"Ungbanned!")
+                await message.reply_text("Ungbanned!")
         return
     from_user_id = message.from_user.id
     user_id = message.reply_to_message.from_user.id
@@ -162,7 +159,7 @@ async def unban_globally(_, message):
             await message.reply_text("He's already free, why bully him?")
         else:
             await remove_gban_user(user_id)
-            await message.reply_text(f"Ungbanned!")
+            await message.reply_text("Ungbanned!")
 
 
 chat_watcher_group = 5

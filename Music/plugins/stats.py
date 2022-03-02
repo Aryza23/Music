@@ -20,10 +20,8 @@ from Music.config import MONGO_DB_URI as smex
 @app.on_message(filters.command("stats") & ~filters.edited)
 async def gstats(_, message):
     m = await message.reply_text("**Getting Stats**\n\nPlease wait for some time..")
-    served_chats = []
     chats = await get_served_chats()
-    for chat in chats:
-        served_chats.append(int(chat["chat_id"]))
+    served_chats = [int(chat["chat_id"]) for chat in chats]
     blocked = await get_gbans_count()
     sudoers = await get_sudoers()
     j = 0
@@ -36,7 +34,7 @@ async def gstats(_, message):
     modules_count = "17"
     sc = platform.system()
     arch = platform.machine()
-    ram = str(round(psutil.virtual_memory().total / (1024.0 ** 3))) + " GB"
+    ram = f'{str(round(psutil.virtual_memory().total / (1024.0 ** 3)))} GB'
     bot_uptime = int(time.time() - Music_START_TIME)
     uptime = f"{get_readable_time((bot_uptime))}"
     hdd = psutil.disk_usage("/")

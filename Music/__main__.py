@@ -47,8 +47,7 @@ async def load_start():
     served_chats = []
     try:
         chats = await get_active_chats()
-        for chat in chats:
-            served_chats.append(int(chat["chat_id"]))
+        served_chats.extend(int(chat["chat_id"]) for chat in chats)
     except Exception as e:
         print("Error came while clearing db")
     for served_chat in served_chats:
@@ -56,7 +55,6 @@ async def load_start():
             await remove_active_chat(served_chat)
         except Exception as e:
             print("Error came while clearing db")
-            pass
     await app.send_message(LOG_GROUP_ID, "Bot Started")
     await client.send_message(LOG_GROUP_ID, "Assistant Started")
     print("[INFO]: STARTED")

@@ -11,11 +11,8 @@ from pyrogram.types import Message
 @app.on_message(filters.command("speedtest") & ~filters.edited)
 async def gstats(_, message):
     userid = message.from_user.id
-    if await is_on_off(2):
-        if userid in SUDOERS:
-            pass
-        else:
-            return
+    if await is_on_off(2) and userid not in SUDOERS:
+        return
     m = await message.reply_text("Running Music's speed test")
     try:
         test = speedtest.Speedtest()
