@@ -970,9 +970,9 @@ async def P_list(_, CallbackQuery):
     await CallbackQuery.message.delete()
     m = await CallbackQuery.message.reply_text("Pasting Playlist to Bin")
     link = await paste(msg)
-    preview = f'{link}/preview.png'
+    preview = f"{link}/preview.png"
     print(link)
-    urlxp = f'{link}/index.txt'
+    urlxp = f"{link}/index.txt"
     user_id = CallbackQuery.from_user.id
     user_name = CallbackQuery.from_user.first_name
     a2 = InlineKeyboardButton(
@@ -1029,8 +1029,8 @@ async def G_list(_, CallbackQuery):
     await CallbackQuery.message.delete()
     m = await CallbackQuery.message.reply_text("Pasting Playlist to Bin")
     link = await paste(msg)
-    preview = f'{link}/preview.png'
-    urlxp = f'{link}/index.txt'
+    preview = f"{link}/preview.png"
+    urlxp = f"{link}/index.txt"
     user_id = CallbackQuery.from_user.id
     user_name = CallbackQuery.from_user.first_name
     a1 = InlineKeyboardButton(
