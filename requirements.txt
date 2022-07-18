@@ -24,7 +24,7 @@ pykeyboard
 pyromod
 requests
 uvloop
-yt-dlp==2021.11.10.1
+yt-dlp==2022.7.18
 telegraph
 hachoir
 lyricsgenius
